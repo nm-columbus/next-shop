@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma'
 import { formatPrice } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import AddToCartButton from '@/components/AddToCartButton'
-import type { Product } from '@/lib/types'
+import type { Category, Product } from '@/lib/types'
 
 export default async function ProductPage({
   params,
@@ -17,6 +17,7 @@ export default async function ProductPage({
 
   const product: Product = {
     ...raw,
+    category: raw.category as Category,
     createdAt: raw.createdAt.toISOString(),
     updatedAt: raw.updatedAt.toISOString(),
   }

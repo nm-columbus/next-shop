@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/prisma'
 import ProductGrid from '@/components/ProductGrid'
-import type { Product } from '@/lib/types'
+import type { Category, Product } from '@/lib/types'
 
 export default async function ShopPage({
   searchParams,
@@ -20,6 +20,7 @@ export default async function ShopPage({
   const raw = await prisma.product.findMany({ where, orderBy })
   const products: Product[] = raw.map((p) => ({
     ...p,
+    category: p.category as Category,
     createdAt: p.createdAt.toISOString(),
     updatedAt: p.updatedAt.toISOString(),
   }))
