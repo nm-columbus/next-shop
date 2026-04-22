@@ -1,0 +1,53 @@
+{
+  // --- GitHub Copilot ---
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": false,
+    "scminput": false
+  },
+
+  "github.copilot.chat.codesearch.enabled": true,
+  
+  // Sugestie inline — nie czekaj na Tab, pokazuj od razu
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  "github.copilot.chat.agent.temperature": 0.1,
+  // Agent mode — pozwol na edycje wielu plikow
+  "chat.agent.enabled": true,
+
+  // --- Tailwind CSS ---
+  "tailwindCSS.experimental.classRegex": [
+    ["cn\\(([^)]*)\\)", "'([^']*)'"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+
+  // --- Editor ---
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // --- Eksplorator --- ukryj szum
+  "files.exclude": {
+    "node_modules": true,
+    ".next": true,
+    "*.js.map": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    ".next": true,
+    "prisma/dev.db": true
+  }
+}
